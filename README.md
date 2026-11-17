@@ -1,100 +1,54 @@
-# Fancy Clothes 👕
+# Fancy Clothes
 
-<div dir="rtl">
+A local preview of a saved **Snug Wrld** storefront snapshot. The page in `site/` is an exported Next.js page with its static assets; this repository does not contain the original Next.js application source or build setup.
 
-یه سایت فروشگاه لباس با یه رگال لباس متحرک. روی هر لباس که کلیک کنی، بزرگ می‌شه و جزئیاتش رو نشون می‌ده.
+The Python helper in `serve.py` uses only the standard library. It serves the saved files locally and handles the exported page's `/_next/image` requests by mapping them to the image files in the snapshot.
 
-[English guide below ⬇️](#english)
+## Preview
 
-## چطوری اجراش کنم؟ (۳ قدم)
+[Open the GitHub Pages preview](https://masoumeh-ashrafi.github.io/fancy-clothes/)
 
-### قدم ۱: دانلود
+The preview shows the saved snapshot. It does not connect to a live store or inventory.
 
-بالای همین صفحه روی دکمهٔ سبز **`<> Code`** بزن و بعد **`Download ZIP`** رو انتخاب کن.
-فایل دانلودشده رو باز کن (Unzip) تا یه پوشه بشه.
+## Run locally
 
-### قدم ۲: نصب پایتون (فقط یه بار)
+Requires Python 3.7 or newer. No packages need to be installed.
 
-- **مک:** معمولاً از قبل نصبه. برو قدم ۳.
-- **ویندوز:** از [python.org/downloads](https://www.python.org/downloads/) دانلود و نصبش کن.
-  ⚠️ موقع نصب حتماً تیک **`Add Python to PATH`** رو بزن.
+### macOS
 
-### قدم ۳: اجرا
-
-توی پوشه‌ای که باز کردی:
-
-- **مک:** روی فایل **`start-mac.command`** دوبار کلیک کن.
-- **ویندوز:** روی فایل **`start-windows.bat`** دوبار کلیک کن.
-
-سایت خودش توی مرورگر باز می‌شه. 🎉
-اگه باز نشد، این آدرس رو توی مرورگر بزن: **http://localhost:8080**
-
-برای بستن سایت، پنجرهٔ سیاه (ترمینال) رو ببند.
-
-## مشکل داری؟
-
-| مشکل | راه‌حل |
-|---|---|
-| مک می‌گه «نمی‌شه بازش کرد چون از یه توسعه‌دهندهٔ ناشناسه» | روی فایل **راست‌کلیک** کن، **Open** رو بزن، بعد دوباره **Open**. |
-| ویندوز می‌گه `python` پیدا نشد | پایتون رو دوباره نصب کن و این بار تیک `Add Python to PATH` رو بزن. |
-| می‌گه پورت 8080 درگیره | یه بار دیگه سایت بازه. اون پنجره رو ببند و دوباره امتحان کن. |
-
-## روش دستی (برای کسایی که با ترمینال کار می‌کنن)
-
-</div>
+Double-click `start-mac.command`, or run:
 
 ```bash
 python3 serve.py
 ```
 
-<div dir="rtl">
+### Windows
 
-روی ویندوز به جای `python3` بنویس `python`.
-اگه می‌خوای روی یه پورت دیگه اجرا بشه: `python3 serve.py 3000`
+Double-click `start-windows.bat`, or run:
 
-</div>
-
----
-
-<a id="english"></a>
-
-## English
-
-A clothing store website with an animated clothes rack. Click any item to see it up close.
-
-### How to run it (3 steps)
-
-1. **Download:** click the green **`<> Code`** button at the top of this page → **`Download ZIP`**, then unzip it.
-2. **Install Python (one time only):**
-   - **Mac:** usually already installed, so skip this step.
-   - **Windows:** install it from [python.org/downloads](https://www.python.org/downloads/). ⚠️ Tick **`Add Python to PATH`** during setup.
-3. **Run:** in the unzipped folder, double-click
-   - **Mac:** `start-mac.command`
-   - **Windows:** `start-windows.bat`
-
-The site opens in your browser by itself. If it doesn't, go to **http://localhost:8080**.
-To stop the site, close the black terminal window.
-
-**Mac says the file is from an unidentified developer?** Right-click the file → **Open** → **Open**.
-
-**Prefer the terminal?**
-
-```bash
-python3 serve.py
+```bat
+python serve.py
 ```
 
-### What's inside
+The helper opens `http://localhost:8080` in your browser. Close the terminal window or press `Ctrl+C` to stop it.
 
-| File / folder | What it is |
-|---|---|
-| `site/` | The website itself |
-| `serve.py` | A tiny local server that runs the site. Nothing to install: it only needs Python. |
-| `start-mac.command` | Double-click to run on Mac |
-| `start-windows.bat` | Double-click to run on Windows |
+To use another port, pass it as an argument:
 
----
+```bash
+python3 serve.py 3000
+```
 
-## Credits
+On Windows, use `python serve.py 3000`.
 
+## Repository contents
 
-Maintained by [masoumeh-ashrafi](https://github.com/masoumeh-ashrafi).
+- `site/` — exported page and saved static assets
+- `serve.py` — local preview server and image request mapping
+- `start-mac.command` — macOS launcher
+- `start-windows.bat` — Windows launcher
+
+## Credit
+
+The saved page identifies the original storefront as **Snug Wrld**. This repository is a static snapshot with a local preview helper, not the original storefront source code.
+
+Maintained by [Masoumeh Ashrafi](https://github.com/masoumeh-ashrafi).
